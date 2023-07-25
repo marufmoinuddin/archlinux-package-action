@@ -20,6 +20,7 @@ jobs:
   pretest:
     name: Test (with Dockerfile)
     runs-on: ubuntu-latest
+    permissions: write-all
 
     steps:
       - name: Checkout
@@ -46,6 +47,7 @@ jobs:
           ls -la
           git diff PKGBUILD
           git diff .SRCINFO
+          
 
   publish:
     name: Publish OCI image
